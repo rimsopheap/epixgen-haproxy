@@ -5,4 +5,5 @@ RUN apk add --no-cache \
     && touch /var/log/haproxy.log \
     && ln -sf /dev/stdout /var/log/haproxy.log
 COPY haproxy.cfg /usr/local/etc/haproxy/haproxy.cfg
+COPY rsyslog.conf /etc/rsyslog.conf
 ENTRYPOINT ["rsyslogd"]
